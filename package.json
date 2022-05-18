@@ -1,0 +1,16 @@
+{
+  "name": "myprihatin-etiqa",
+  "version": "1.0.0",
+  "description": "Etiqa API for MyPrihatin",
+  "main": "generate-signature.js",
+  "type": "module",
+  "dependencies": {
+    "fs": "0.0.1-security"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm generate-signature.js"
+  },
+  "author": "Fadli Saad",
+  "license": "ISC"
+}
