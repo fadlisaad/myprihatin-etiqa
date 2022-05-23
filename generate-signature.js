@@ -1,10 +1,9 @@
-import { createSign } from 'crypto';
-import { readFileSync } from "fs";
-
+var crypto = require('crypto');
+var fs = require("fs");
 var requrl,signhdr,basestring,signer,signres,timestamp;
 
 /* Private key for generating the signature */ 
-var key = readFileSync("myextra-private.pem", "utf8");
+var key = fs.readFileSync("myextra-private.pem", "utf8");
 
 /* Request Payload */
 var reqmsg = {
@@ -28,7 +27,10 @@ basestring = 'POST;' + encodeURIComponent(requrl) + ';' + signhdr + JSON.stringi
 console.log("SingatureBasestring: " + basestring)
 
 /* Signature Constructure */ 
-signer = createSign('RSA-SHA256');
+signer = crypto.createSign('RSA-SHA256');
 signer.update(basestring);
 signres = signer.sign(key,"base64");
 console.log("signature with rsa-sha256 is: " + signres);
+
+exports.timestamp = timestamp;
+exports.signature = signres;
