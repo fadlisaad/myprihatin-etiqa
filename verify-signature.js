@@ -9,8 +9,8 @@ var requrl,signhdr,basestring,timestamp;
 var reqmsg = {
     "grant_type": "client_credentials",
     "scope": "motors",
-    "client_id": "197ED4380BEB4A4387A2F60C087B4AB2",
-    "client_secret": "1fd05233a3504af9a7dbe4401defe83c"
+    "client_id": "b41bcda226284b319a8a34e828538267",
+    "client_secret": "3132a109a917494cb40b161d77a5f262"
 };
 
 /* Request URL for Base string */
