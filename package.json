@@ -11,7 +11,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "npm generate-signature.js",
-    "start": "node generate-signature.js"
+    "start": "node app.js"
   },
   "author": "Fadli Saad",
   "license": "ISC"
