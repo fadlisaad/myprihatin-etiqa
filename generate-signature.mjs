@@ -1,5 +1,6 @@
 import { createSign } from 'crypto';
 import { readFileSync } from "fs";
+
 var requrl,signhdr,basestring,signer,signres,timestamp;
 
 /* Private key for generating the signature */ 

@@ -1,5 +1,5 @@
 import { createVerify } from 'crypto';
-import { readFileSync } from "fs";
+import { readFileSync } from 'fs';
 
 /* Public key for signature verification */ 
 var key = readFileSync("myextra-public.pem", "utf8");
@@ -17,11 +17,11 @@ var reqmsg = {
 requrl = 'https://staging.api.maybank.com/api/oauth2/v4/clientcred/token';
 
 /* Generate epoch timestamp */
-timestamp = "1633055044000";
+timestamp = "1653522922168"; // get from generate-signature
 console.log("X-MB-Timestamp: " + timestamp);
 
-/* Signature value */ 
-var signvalue = "O0pehWJQ+dX7IviDCT0OKmt72IxKGoVcxWpCmaxVTfDeJQJ4VhqD6xpzMFzFXgcMVPms825I/8sst5zTgL/Qfd4nAIBgII1+3b1iEKIi/jmgMICEu2LqPpiKseDuGEWQXHJaDd1bvIIgH0++NiMknh58QGRV9SRkOzrxU6pn75W6QVepg3OWcBqMt60VB14fiDX12jIlwlJk4SDJY1a8ZnYySOSdJGqByZ6i9AsTOhx9OEFZWkYkt62iEdr2n88mQuZaBhxJOSk3If6A51AspfkTXaO9RVi+0HrPIeb8Ldai8QH8q/OnBCmFOJ6j0PVybu/HlQZABgtqeIAyITaLsQ==";
+/* Signature value get from generate signature*/ 
+var signvalue = "38NlqA3HLyY/JJC+nwVuunhUQFnGkBoiPrek6s6OnYmeDdm6QdeuvT0D71YJofMGYMcargHpUF7CQhgcY1cHU6ExDpotsW49ZZvJJ7YkfpE6r7Y8tBlVC+F/AsCTg/wbyG4JHNGA4Ac0FQwmDJ+7TiqUI2QQMG//PaKNzPZJf1L/lXJbslu+g4w1QIxO/ZR+FkUTjI1dufkg7ItylP9AYnpZN071FVKA7DNdPGXzgNVhbMfscLR9IcW7Ro8L0uWYe+GPFKbBbGIPxmGXIfxsObcvhJtC3sJGPZUdtlzg2m5rxrN11sMEqZyAg9byaDJAhDoTquCATmy7fTiHPB6cDw==";
 
 /* Signature Base String Construction  */
 signhdr = 'X-MB-Timestamp=' + timestamp + ';';

@@ -2,7 +2,7 @@
 const express = require("express")
 const app = express()
 
-const gs = require('./generate-signature')
+const gs = require('generate-signature')
 
 // use the express-static middleware
 app.use(express.static("public"))
