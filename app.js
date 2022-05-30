@@ -2,14 +2,19 @@
 import express from "express"
 const app = express()
 
-import { signature } from './generate-signature.js'
+import { signature, timestamp } from './generate-signature.js'
 
 // use the express-static middleware
 app.use(express.static("public"))
 
 // define the first route
 app.get("/", function (req, res) {
-  res.send(signature)
+  res.setHeader('Content-Type', 'application/json');
+  const result = {
+    signature,
+    timestamp
+  }
+  res.send(result)
 })
 
 // start the server listening for requests
