@@ -10,11 +10,10 @@ app.use(express.static("public"))
 // define the first route
 app.get("/", function (req, res) {
   res.setHeader('Content-Type', 'application/json');
-  const result = {
+  res.send({
     signature,
     timestamp
-  }
-  res.send(result)
+  })
 })
 
 // start the server listening for requests
