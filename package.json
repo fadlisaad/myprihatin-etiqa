@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "description": "Etiqa API for MyPrihatin",
   "main": "generate-signature.js",
+  "type": "module",
   "dependencies": {
     "express": "^4.18.1",
     "fs": "0.0.1-security"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "npm generate-signature.js"
+    "test": "npm generate-signature.js",
+    "start": "node app.js"
   },
   "author": "Fadli Saad",
   "license": "ISC"
