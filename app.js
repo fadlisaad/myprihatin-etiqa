@@ -1,15 +1,15 @@
 // create an express app
-const express = require("express")
+import express from "express"
 const app = express()
 
-const gs = require('generate-signature')
+import { signature } from './generate-signature.js'
 
 // use the express-static middleware
 app.use(express.static("public"))
 
 // define the first route
 app.get("/", function (req, res) {
-  res.send(gs.signature)
+  res.send(signature)
 })
 
 // start the server listening for requests
