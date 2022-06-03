@@ -20,7 +20,7 @@ timestamp = Date.now();
 console.log("X-MB-Timestamp: " + timestamp);
 
 /* Request URL for Base string */
-requrl = 'https://staging.api.maybank.com/api/oauth2/v2/clientcred/token';
+requrl = 'https://staging.api.maybank.com/U/api/oauth2/v4/clientcred/token';
 
 /* Signature Base String Construction  */
 signhdr = 'X-MB-Timestamp=' + timestamp + ';';
