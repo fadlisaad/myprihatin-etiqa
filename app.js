@@ -34,7 +34,7 @@ app.use(express.json());
 
 app.post('/auth', (req, res) => {
   res.send({
-    req.body
+    req
   });
 });
 
