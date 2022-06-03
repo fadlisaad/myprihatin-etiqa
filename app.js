@@ -30,13 +30,11 @@ app.get("/payload", function (req, res) {
   })
 })
 
+app.use(express.json());
+
 app.post('/auth', (req, res) => {
-  const { username, password } = req.body;
-  const { authorization } = req.headers;
   res.send({
-    username,
-    password,
-    authorization,
+    req.body
   });
 });
 
