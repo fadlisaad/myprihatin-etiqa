@@ -14,7 +14,7 @@ var reqmsg = {
 };
 
 /* Request URL for Base string */
-requrl = 'https://staging.api.maybank.com/api/oauth2/v4/clientcred/token';
+requrl = 'https://staging.api.maybank.com/U/api/oauth2/v4/clientcred/token';
 
 /* Generate epoch timestamp */
 timestamp = "1653522922168"; // get from generate-signature
