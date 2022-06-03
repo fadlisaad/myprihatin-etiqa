@@ -2,9 +2,6 @@
 import express from "express"
 const app = express()
 
-// Tell express to use the body-parser middleware and to not parse extended bodies
-app.use(bodyParser.urlencoded({ extended: false }))
-
 import { signature, timestamp } from './generate-signature.js'
 import { status } from './verify-signature.mjs';
 import { payload } from './payload.js';
