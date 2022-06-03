@@ -1,7 +1,6 @@
 // create an express app
 import express from "express"
 const app = express()
-const bodyParser = require('body-parser')
 
 // Tell express to use the body-parser middleware and to not parse extended bodies
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -34,12 +33,15 @@ app.get("/payload", function (req, res) {
   })
 })
 
-// Route that receives a POST request to /sms
-app.post('/post', function (req, res) {
-  const body = req.body.Body
-  res.set('Content-Type', 'text/plain')
-  res.send('You sent: ${body}')
-})
+app.post('/auth', (req, res) => {
+  const { username, password } = req.body;
+  const { authorization } = req.headers;
+  res.send({
+    username,
+    password,
+    authorization,
+  });
+});
 
 // start the server listening for requests
 app.listen(process.env.PORT || 3000, 
