@@ -4,7 +4,7 @@ import { signature, timestamp } from './generate-signature.js'
 
 /* Public key for signature verification */ 
 var key = readFileSync("myextra-public.pem", "utf8");
-var requrl,signhdr,basestring,timestamp;
+var requrl,signhdr,basestring;
 
 /* Request Payload */
 var reqmsg = {
