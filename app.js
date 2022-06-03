@@ -3,6 +3,7 @@ import express from "express"
 const app = express()
 
 import { signature, timestamp } from './generate-signature.js'
+import { status } from './verify-signature.mjs';
 
 // use the express-static middleware
 app.use(express.static("public"))
@@ -12,7 +13,8 @@ app.get("/", function (req, res) {
   res.setHeader('Content-Type', 'application/json');
   res.send({
     signature,
-    timestamp
+    timestamp,
+    status
   })
 })
 

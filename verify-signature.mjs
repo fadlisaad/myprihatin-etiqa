@@ -34,3 +34,4 @@ var verifyres = verifier.verify(key, signvalue, "base64");
 
 /* Result : for Success : value is true ; Failed : false */
 console.log("signature verification result: " +verifyres);
+export { verifyres as status };
