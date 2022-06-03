@@ -32,4 +32,4 @@ console.log("SingatureBasestring: " + basestring)
 signer = createSign('RSA-SHA256');
 signer.update(basestring);
 signres = signer.sign(key,"base64");
-export const signature = signres;          
+export const payload = signres;          
