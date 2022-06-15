@@ -5,6 +5,7 @@ const app = express()
 import { signature, timestamp } from './generate-signature.js'
 import { status } from './verify-signature.mjs';
 import { payload } from './payload.js';
+import { access_token } from './access_token.js';
 
 // use the express-static middleware
 app.use(express.static("public"))
@@ -30,13 +31,13 @@ app.get("/payload", function (req, res) {
   })
 })
 
-app.use(express.json());
-
-app.post('/auth', (req, res) => {
+// access token
+app.get("/access_token", function (req, res) {
+  res.setHeader('Content-Type', 'application/json');
   res.send({
-    req
-  });
-});
+    access_token
+  })
+})
 
 // start the server listening for requests
 app.listen(process.env.PORT || 3000, 
