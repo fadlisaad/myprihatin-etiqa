@@ -20,9 +20,10 @@ var options = {
   })
 
 };
+
 rq(options, function (error, response) {
   if (error) throw new Error(error);
   console.log(response.body);
 });
 
-export { response.body as access_token };
+export { response as access_token };
