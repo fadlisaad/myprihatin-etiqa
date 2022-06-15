@@ -3,8 +3,6 @@ import express from "express"
 const app = express()
 
 import unirest from "unirest"
-const uni = unirest()
-
 import { signature, timestamp } from './generate-signature.js'
 import { status } from './verify-signature.mjs';
 import { payload } from './payload.js';
@@ -37,7 +35,7 @@ app.get("/payload", function (req, res) {
 app.get("/access_token", function (req, res) {
   res.setHeader('Content-Type', 'application/json');
   res.send(
-    uni('POST', 'https://staging.api.maybank.com/U/api/oauth2/v4/clientcred/token')
+    unirest('POST', 'https://staging.api.maybank.com/U/api/oauth2/v4/clientcred/token')
     .headers({
       'X-MB-Signed-Headers': 'X-MB-Timestamp',
       'X-MB-Signature-Alg': 'RSA-SHA256',
