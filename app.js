@@ -2,6 +2,9 @@
 import express from "express"
 const app = express()
 
+import unirest from "unirest"
+const uni = unirest()
+
 import { signature, timestamp } from './generate-signature.js'
 import { status } from './verify-signature.mjs';
 import { payload } from './payload.js';
@@ -29,10 +32,6 @@ app.get("/payload", function (req, res) {
     payload
   })
 })
-
-var unirest = require('unirest');
-import unirest from "unirest"
-const uni = unirest()
 
 function getToken() {
   return new Promise((resolve, reject) => {
