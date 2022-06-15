@@ -1,4 +1,3 @@
-import { rq } from 'request';
 import { signature, timestamp } from './generate-signature.js'
 
 var options = {
@@ -21,7 +20,7 @@ var options = {
 
 };
 
-rq(options, function (error, response) {
+request(options, function (error, response) {
   if (error) throw new Error(error);
   console.log(response.body);
 });
