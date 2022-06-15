@@ -5,7 +5,7 @@ const app = express()
 import { signature, timestamp } from './generate-signature.js'
 import { status } from './verify-signature.mjs';
 import { payload } from './payload.js';
-import { access_token } from './access_token.js';
+import { access_token } from './access_token.cjs';
 
 // use the express-static middleware
 app.use(express.static("public"))
