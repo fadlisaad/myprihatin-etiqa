@@ -26,4 +26,4 @@ rq(options, function (error, response) {
   console.log(response.body);
 });
 
-export { response as access_token };
+export const access_token = rq;
