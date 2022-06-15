@@ -31,10 +31,12 @@ app.get("/payload", function (req, res) {
 })
 
 var unirest = require('unirest');
+import unirest from "unirest"
+const uni = unirest()
 
 function getToken() {
   return new Promise((resolve, reject) => {
-    unirest('POST', 'https://staging.api.maybank.com/U/api/oauth2/v4/clientcred/token')
+    uni('POST', 'https://staging.api.maybank.com/U/api/oauth2/v4/clientcred/token')
       .headers({
         'X-MB-Signed-Headers': 'X-MB-Timestamp',
         'X-MB-Signature-Alg': 'RSA-SHA256',
