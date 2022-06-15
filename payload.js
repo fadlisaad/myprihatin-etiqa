@@ -4,11 +4,9 @@ import { readFileSync } from "fs";
 var requrl,signhdr,basestring,signer,signres,clientid,timestamp,signature,Authorization;
 
 /* Private key for generating the signature */ 
-
 var key = readFileSync("myextra-private.pem", "utf8");
 
 /* Request Payload */
-
 var reqmsg = {
     "sample": "Test Data"
 };
@@ -22,13 +20,11 @@ requrl = 'https://staging.api.maybank.com/U/api/my/retail/payment/v4/mgate/getke
 clientid = "b41bcda226284b319a8a34e828538267",Authorization = signature;
 
 /* Signature Base String Construction  */
-
 signhdr = 'X-MB-Client-Id=' + clientid + ';' + 'Authorization=' + Authorization + ';' + 'X-MB-Timestamp=' +  timestamp + ';';           
 basestring = 'POST;' + encodeURIComponent(requrl) + ';' + signhdr + JSON.stringify(reqmsg);
 console.log("SingatureBasestring: " + basestring)
 
 /* Signature Constructure */ 
-
 signer = createSign('RSA-SHA256');
 signer.update(basestring);
 signres = signer.sign(key,"base64");
