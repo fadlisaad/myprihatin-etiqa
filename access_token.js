@@ -1,4 +1,5 @@
-import { signature, timestamp } from './generate-signature.js'
+const request = require('request');
+import { signature, timestamp } from './generate-signature.js';
 
 var options = {
   'method': 'POST',
